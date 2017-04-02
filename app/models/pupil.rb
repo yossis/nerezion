@@ -20,9 +20,9 @@
 #
 
 class Pupil < ApplicationRecord
-  validates :phone, uniqueness: {message: 'מספר טלפון זה קיים במערכת'}, presence: {message: 'יש להכניס מספר טלפון'}
-  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i  , message: 'כתובת מייל שגויה'}
-  validates :is_coming, acceptance: {message: 'נא לסמן הגעה'}
+  # validates :phone, uniqueness: {message: 'מספר טלפון זה קיים במערכת'}, presence: {message: 'יש להכניס מספר טלפון'}
+  # validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i  , message: 'כתובת מייל שגויה'}
+  # validates :is_coming, acceptance: {message: 'נא לסמן הגעה'}
   default_scope { order(last_name: :asc) }
 
   def invited?
