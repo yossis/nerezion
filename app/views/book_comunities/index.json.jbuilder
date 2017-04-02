@@ -1,0 +1,1 @@
+json.array! @book_comunities, partial: 'book_comunities/book_comunity', as: :book_comunity

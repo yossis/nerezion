@@ -1,0 +1,64 @@
+<% title "מי מגיע" %>
+
+<section>
+  <div class="container">
+    <% if flash[:success] %>
+      <div class="alert alert-success">
+        <div>תודה על הרשמתך!</div>
+
+        <div>נתראה ביום ד׳ ה27/7 בשעה 18:00 בביה״ס</div>
+      </div>
+    <% end %>
+
+    <h2>מי מגיע?</h2>
+
+    <div class="col-md-3">
+      <h3>ו-3</h3>
+      <ul>
+        <% @who_comes3.try(:each) do |p| %>
+        <li><%= "#{p.first_name} #{p.last_name}" %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="col-md-3">
+      <h3>ו-2</h3>
+      <ul>
+        <% @who_comes2.try(:each) do |p| %>
+        <li><%= "#{p.first_name} #{p.last_name}" %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="col-md-3">
+      <h3>ו-1</h3>
+      <ul>
+        <% @who_comes1.try(:each) do |p| %>
+        <li><%= "#{p.first_name} #{p.last_name}" %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="col-md-3">
+      <h3>מורים</h3>
+      <ul>
+        <% @teachers.try(:each) do |p| %>
+        <li><%= "#{p.first_name} #{p.last_name}" %></li>
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h2>עזרו לאתר את האנשים הבאים</h2>
+    <div class="thankyou-message"></div>
+    <div id="inviteListContainer">
+      <%= render 'static_pages/invite_list' %>
+    </div>
+
+
+  </div>
+</section>
+<%= render 'modals/modal_invite' %>

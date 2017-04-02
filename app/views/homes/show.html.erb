@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>What plan:</strong>
+  <%= @home.what_plan %>
+</p>
+
+<p>
+  <strong>Who orgenize:</strong>
+  <%= @home.who_orgenize %>
+</p>
+
+<p>
+  <strong>What help:</strong>
+  <%= @home.what_help %>
+</p>
+
+<p>
+  <strong>What need:</strong>
+  <%= @home.what_need %>
+</p>
+
+<%= link_to 'Edit', edit_home_path(@home) %> |
+<%= link_to 'Back', homes_path %>

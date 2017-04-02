@@ -1,0 +1,9 @@
+<% if @pupil.errors.any? %>
+	$('.invite-message').html('<%= j render "alerts/alert" , e: @pupil %>');
+	//$('html, body').animate({ scrollTop: $('.project-message').offset().top }, 'slow');
+	$('.loading').button('reset');
+<% else %>
+	$('.thankyou-message').html('<%= j render "alerts/invite_success" %>');
+	$('#inviteListContainer').html('<%= j render "static_pages/invite_list" %>')
+	$('#modalInvite').modal('hide');
+<% end %>

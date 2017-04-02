@@ -1,0 +1,16 @@
+<%= form_tag({ controller: 'pupils', action: 'invite'}, class: 'form-inline', remote: true) do %>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="input-group input-group-lg">
+      <input type="hidden" name="hidden_pupil_id" id="hidden_pupil_id" />
+      <%= telephone_field_tag 'invited_phone',nil, class: 'form-control input-lg reset-on-press', required: true %>
+      <div class="input-group-btn">
+        <button type="submit" class="btn btn-primary btn-lg">שלח  SMS</button>
+      </div><!-- /btn-group -->
+    </div><!-- /input-group -->
+  </div><!-- /.col-xs-12 -->
+</div><!-- /.row -->
+
+
+<% end %>

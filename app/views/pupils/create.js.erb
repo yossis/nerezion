@@ -1,0 +1,7 @@
+<% if @pupil.errors.any? %>
+	$('.modal-message').html('<%= j render "alerts/alert" , e: @pupil %>');
+	//$('html, body').animate({ scrollTop: $('.project-message').offset().top }, 'slow');
+	$('.loading').button('reset');
+<% else %>
+	location.href = "<%= whos_in_url %>";
+<% end %>

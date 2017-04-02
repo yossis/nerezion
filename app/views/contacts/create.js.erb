@@ -1,0 +1,7 @@
+<% if @contact.errors.any? %>
+	$('.contact-message').html('<%= j render "alerts/alert" , e: @contact %>');
+	//$('html, body').animate({ scrollTop: $('.project-message').offset().top }, 'slow');
+	$('.loading').button('reset');
+<% else %>
+	$('#new_contact').html('<div class="alert alert-success"><strong>הודעתך נשלחה!</strong> נצור קשר בקרוב</div>');
+<% end %>

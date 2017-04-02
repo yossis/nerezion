@@ -1,0 +1,64 @@
+<%= form_for(@pupil) do |f| %>
+  <% if @pupil.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pupil.errors.count, "error") %> prohibited this pupil from being saved:</h2>
+
+      <ul>
+      <% @pupil.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name , class: 'form-control input-lg'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name , class: 'form-control input-lg'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :madien_name %>
+    <%= f.text_field :madien_name , class: 'form-control input-lg', placeholder: 'שם משפחה'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :class_name %>
+    <%= f.text_field :class_name , class: 'form-control input-lg'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email , class: 'form-control input-lg'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :phone %>
+    <%= f.text_field :phone , class: 'form-control input-lg'%>
+  </div>
+
+  <div class="checkbox">
+    <%= f.label :is_coming %>
+    <%= f.check_box :is_coming %>
+  </div>
+
+  <div class="coeckbox">
+    <%= f.label :is_registered %>
+    <%= f.check_box :is_registered %>
+  </div>
+
+  <div class="checkbox">
+  <label>
+    <input type="checkbox" value="">
+    Option one is this and that&mdash;be sure to include why it's great
+  </label>
+</div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

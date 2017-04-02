@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: homes
+#
+#  id                 :integer          not null, primary key
+#  what_plan          :text
+#  who_orgenize       :text
+#  what_help          :text
+#  what_need          :text
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  email_registration :text
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  what_plan: MyText
+  who_orgenize: MyText
+  what_help: MyText
+  what_need: MyText
+
+two:
+  what_plan: MyText
+  who_orgenize: MyText
+  what_help: MyText
+  what_need: MyText

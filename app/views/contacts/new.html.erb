@@ -1,0 +1,17 @@
+<section>
+  <div class="container">
+    <h1>צור קשר</h1>
+    <p>
+       אם הינך מעוניינ/ת לעזור או סתם ליצור קשר זה המקום
+    </p>
+    <h3>דברים שבהם אנו זקוקים לעזרה:</h3>
+    <p><%= nl2br @home.what_need%></p>
+  </div>
+</section>
+<section class="bg-gray">
+  <div class="container">
+    <p>
+      <%= render 'contacts/form', contact: @contact %>
+    </p>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Not In Lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Full name</th>
+      <th>Phone number</th>
+      <th>Email</th>
+      <th>Class name</th>
+      <th>Is teacher</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @not_in_lists.each do |not_in_list| %>
+      <tr>
+        <td><%= not_in_list.full_name %></td>
+        <td><%= not_in_list.phone_number %></td>
+        <td><%= not_in_list.email %></td>
+        <td><%= not_in_list.class_name %></td>
+        <td><%= not_in_list.is_teacher %></td>
+        <td><%= link_to 'Show', not_in_list %></td>
+        <td><%= link_to 'Edit', edit_not_in_list_path(not_in_list) %></td>
+        <td><%= link_to 'Destroy', not_in_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Not In List', new_not_in_list_path %>

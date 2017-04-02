@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @not_in_list.full_name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @not_in_list.phone_number %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @not_in_list.email %>
+</p>
+
+<p>
+  <strong>Class name:</strong>
+  <%= @not_in_list.class_name %>
+</p>
+
+<p>
+  <strong>Is teacher:</strong>
+  <%= @not_in_list.is_teacher %>
+</p>
+
+<%= link_to 'Edit', edit_not_in_list_path(@not_in_list) %> |
+<%= link_to 'Back', not_in_lists_path %>

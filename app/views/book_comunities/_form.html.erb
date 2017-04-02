@@ -1,0 +1,37 @@
+<%= form_for(book_comunity) do |f| %>
+  <% if book_comunity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book_comunity.errors.count, "error") %> prohibited this book_comunity from being saved:</h2>
+
+      <ul>
+      <% book_comunity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pupil_id %>
+    <%= f.number_field :pupil_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :about_me %>
+    <%= f.text_area :about_me %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photo_from_last %>
+    <%= f.text_field :photo_from_last %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photo_form_today %>
+    <%= f.text_field :photo_form_today %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

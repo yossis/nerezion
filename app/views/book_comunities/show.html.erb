@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pupil:</strong>
+  <%= @book_comunity.pupil_id %>
+</p>
+
+<p>
+  <strong>About me:</strong>
+  <%= @book_comunity.about_me %>
+</p>
+
+<p>
+  <strong>Photo from last:</strong>
+  <%= @book_comunity.photo_from_last %>
+</p>
+
+<p>
+  <strong>Photo form today:</strong>
+  <%= @book_comunity.photo_form_today %>
+</p>
+
+<%= link_to 'Edit', edit_book_comunity_path(@book_comunity) %> |
+<%= link_to 'Back', book_comunities_path %>

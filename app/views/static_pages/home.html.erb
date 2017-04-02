@@ -1,0 +1,65 @@
+
+
+<section class="main-fold">
+
+    <div class="display-table center">
+      <div class="display-table-cell vertical-align-middle">
+        <h1>מפגש מחזור ל׳</h1>
+        <h2>בית הספר נר-עציון</h2>
+        <h3>יום רביעי ה27/7 בשעה 18:00 בביה״ס</h3>
+      </div>
+    </div>
+
+  <div class="overlay"></div>
+
+</section>
+
+<section>
+  <div class="container">
+    <h1>מה בתוכנית?</h1>
+    <p>
+      <%= nl2br @home.what_plan%>
+    </p>
+    <p><strong>קיומו של המפגש תלוי בהיענות של האנשים בכך ש<a data-toggle="modal" data-target="#modalRegistration">תאשרו את הגעתכם</a> ובכך ש<%= link_to 'תביאו חברים להרשם', whos_in_url %></strong></p>
+  </div>
+</section>
+<section class="bg-gray">
+  <div class="container">
+    <h1>מי מארגן?</h1>
+    <p>
+      <%= nl2br @home.who_orgenize%>
+    </p>
+  </div>
+</section>
+<section class="">
+  <div class="container">
+    <h1>היכן אפשר לעזור?</h1>
+    <p>
+      <%= nl2br @home.what_help%>
+    </p>
+  </div>
+</section>
+<section class="bg-gray">
+  <div class="container">
+    <h1>מה עוד?</h1>
+    <p>
+      <%= nl2br @home.what_need%>
+    </p>
+    <p>
+      <strong>ליצירת קשר <%= link_to 'יש ללחוץ כאן', new_contact_url %></strong>
+    </p>
+    <div class="center">
+      <a data-toggle="modal" data-target="#modalRegistration" class="btn btn-lg btn-primary">להרשמה!</a>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  $(window).scroll(function() {
+    if ($(document).scrollTop() > 100) {
+      $('#siteHeaderNavbar').removeClass('transparent');
+    } else {
+      $('#siteHeaderNavbar').addClass('transparent');
+    }
+  });
+</script>

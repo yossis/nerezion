@@ -1,0 +1,42 @@
+<%= form_for(not_in_list) do |f| %>
+  <% if not_in_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(not_in_list.errors.count, "error") %> prohibited this not_in_list from being saved:</h2>
+
+      <ul>
+      <% not_in_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :full_name %>
+    <%= f.text_field :full_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :class_name %>
+    <%= f.text_field :class_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :is_teacher %>
+    <%= f.check_box :is_teacher %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

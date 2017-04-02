@@ -1,0 +1,31 @@
+<!-- Modal -->
+<div class="modal fade" id="modalRegistration" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+          <div class="modal-wrapper">
+            <div class="modal-header center">
+               <button type="button" class="close icon-close" data-dismiss="modal" aria-hidden="true">x</button>
+               <h3>הרשמה!</h3>
+            </div>
+            <div class="modal-body">
+              <%= render 'static_pages/registration'%>
+              <%= render 'static_pages/not_in_list' %>
+            </div>
+            <div class="modal-footer center bold">
+              <a class="toggle-forms">אם אינך מופיע/ה ברשימה נא לחצ/י כאן</a>
+            </div>
+
+        </div>
+        <!-- /.modal-wrapper -->
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<script type="text/javascript">
+
+  $('body').on('hidden.bs.modal', '.modal', function () {
+    $(this).removeData('bs.modal');
+  });
+</script>

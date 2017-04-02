@@ -1,0 +1,7 @@
+<% if @not_in_list.errors.any? %>
+	$('.modal-message').html('<%= j render "alerts/alert" , e: @not_in_list %>');
+	//$('html, body').animate({ scrollTop: $('.project-message').offset().top }, 'slow');
+	$('.loading').button('reset');
+<% else %>
+	location.href = "<%= whos_in_url %>";
+<% end %>

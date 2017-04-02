@@ -1,0 +1,1 @@
+json.partial! "not_in_lists/not_in_list", not_in_list: @not_in_list

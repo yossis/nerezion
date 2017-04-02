@@ -1,0 +1,1 @@
+json.array! @not_in_lists, partial: 'not_in_lists/not_in_list', as: :not_in_list

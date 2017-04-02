@@ -1,0 +1,45 @@
+<div id="notInList" style="display: none">
+
+  <%= form_for(Pupil.new, remote: true) do |f| %>
+  <div class="modal-message"></div>
+
+  <div class="form-group">
+    <%= f.text_field :first_name ,class: 'form-control input-lg reset-on-press', placeholder: 'שם פרטי', required: true%>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :madien_name ,class: 'form-control input-lg reset-on-press', placeholder: 'שם משפחה (נעורים)'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :last_name ,class: 'form-control input-lg reset-on-press', placeholder: 'שם משפחה', required: true%>
+  </div>
+
+  <div class="form-group">
+     <%= f.text_field :phone ,class: 'form-control input-lg reset-on-press', placeholder: 'מספר טלפון', required: true%>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :email ,class: 'form-control input-lg reset-on-press', placeholder: 'כתובת מייל', required: true%>
+  </div>
+
+  <div class="form-group">
+    <%= f.select(:class_name, [[ "ו-1", 1 ], [ "ו-2", 2 ], ["ו-3", 3]], { include_blank: '-- בחר/י בבקשה --' }, required: true) %>
+  </div>
+  <div class="checkbox">
+    <%= f.check_box :is_coming %>
+    <%= f.label :is_coming ,'סמן הגעתך כאן' %>
+
+  </div>
+
+  <div class="form-group">
+
+    <%= f.check_box :is_teacher %>
+    <%= f.label :is_teacher, 'סמן כאן אם הנך מורה' %>
+  </div>
+
+  <div class="actions center">
+    <%= f.submit 'רשום אותי!', class: 'btn btn-primary btn-lg', data: { disable_with: 'רושם..'} %>
+  </div>
+<% end %>
+</div>
