@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   resources :memorials
   resources :books
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
   post '/static_pages/login', to: 'static_pages#login'
 
   mount Attachinary::Engine => "/attachinary"
+  mount Sidekiq::Web => '/sidekiq'
 
   root to: 'static_pages#home'
 
