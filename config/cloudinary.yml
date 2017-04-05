@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: nerezion
+  api_key: '347285115418862'
+  api_secret: wBPPAWqDq9OSGFMmGiJtkmiFAmE
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: nerezion
+  api_key: '347285115418862'
+  api_secret: wBPPAWqDq9OSGFMmGiJtkmiFAmE
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: nerezion
+  api_key: '347285115418862'
+  api_secret: wBPPAWqDq9OSGFMmGiJtkmiFAmE
+  enhance_image_tag: true
+  static_image_support: false

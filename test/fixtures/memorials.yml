@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: memorials
+#
+#  id               :integer          not null, primary key
+#  book_id          :integer
+#  pupil_id_sender  :integer
+#  pupil_id_reciver :integer
+#  content          :text
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  book: one
+  pupil_id_sender: 
+  pupil_id_reciver: 1
+  content: MyText
+
+two:
+  book: two
+  pupil_id_sender: 
+  pupil_id_reciver: 1
+  content: MyText

@@ -1,0 +1,8 @@
+<% if @memorial.errors.any? %>
+	$('.memorial-message-<%= @memorial.id %>').html('<%= j render "alerts/alert" , e: @memorial %>');
+	//$('html, body').animate({ scrollTop: $('.project-message').offset().top }, 'slow');
+	$('.loading').button('reset');
+<% else %>
+  $('.memrails-list-container').html('<%= j render "static_pages/memorials_list" %>');
+  $('.memorial-message-<%= @memorial.id %>').html('<div class="alert alert-success">הטופס עודכן בהצלחה!</div>');
+<% end %>

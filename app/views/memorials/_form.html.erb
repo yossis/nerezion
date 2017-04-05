@@ -1,0 +1,20 @@
+
+<%= form_for(memorial, remote: true) do |f| %>
+
+  <div class="form-group">
+    <%= f.select :pupil_id_reciver, options_for_select(@pupils.map{ |c| ["#{c.last_name} #{c.first_name}, ו-#{c.class_name}", c.id] },  memorial.pupil_id_reciver),{:include_blank => '-- בחר/י חבר או מורה --'}, class: 'form-control input-lg', dir: 'rtl', required: true %>
+
+
+  </div>
+  <div class="form-group">
+    <%= f.text_area :content,class: 'form-control input-lg', placeholder: 'כתב/י כאן' , required: true%>
+  </div>
+
+  <div class="memorial-message-<%= memorial.id %>"></div>
+
+  <div class="actions center">
+    <%= f.submit 'עדכן', class: 'btn btn-primary btn-lg'%>
+
+    <%= link_to 'מחק', memorial, method: :delete, data: { confirm: 'האם למחוק?' }, remote: true if memorial.id.present?%>
+  </div>
+<% end %>

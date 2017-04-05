@@ -8,6 +8,7 @@ class PupilMailer < ApplicationMailer
   #
   def welcome(pupil_id)
     @pupil = Pupil.find pupil_id
+    @home = Home.first
     mail to: @pupil.email, subject: 'כנס מחזור ל בית הספר נר-עציון'
   end
 end

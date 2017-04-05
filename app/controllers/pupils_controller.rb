@@ -31,11 +31,13 @@ class PupilsController < ApplicationController
       @pupil = Pupil.new(pupil_params)
     end
     @pupil.is_registered = true
-    
+
     respond_to do |format|
       if @pupil.is_valid_phone?(pupil_params[:phone]) && @pupil.save
         PupilMailer.welcome(@pupil.id).deliver_later
+        SystemMailer.welcome(@pupil).deliver_later
         flash[:success] = true
+        cookies.signed[:pupil] = { value: @pupil.id, expires: 1.year.from_now }
         format.html { redirect_to @pupil, notice: 'Pupil was successfully created.' }
         format.json { render :show, status: :created, location: @pupil }
         format.js

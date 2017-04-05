@@ -44,5 +44,7 @@ $(document).ready(function(){
       $(this).html('אם אינך מופיע/ה ברשימה נא לחצ/י כאן');
     }
 
-  })
+  });
+
+  $('.attachinary-input').attachinary();
 });

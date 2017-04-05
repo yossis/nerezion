@@ -7,23 +7,18 @@ class SmsJob < ApplicationJob
   end
 
   def send_sms
-
-      un = "test5"
-      pw = "56789"
-      accid = "362"
-      sysPW = "itnewslettrSMS"
       t = Time.now.strftime("%Y-%m-%d %H:%M:%S")
 
       client = Savon.client(wsdl: "http://api.itnewsletter.co.il/webServices/WebServiceSMS.asmx?wsdl")
       params = {} #Array.new
-      params["un"] = un
-      params["pw"] = pw
-      params["accid"] = accid
+      params["un"] = ENV["SMS_USER_NAME"]
+      params["pw"] = ENV['SMS_PASSWORD']
+      params["accid"] = ENV['SMS_ACCOUNT']
       params["sysPW"] = "itnewslettrSMS"
       params["t"] = t
-      params["txtUserCellular"] = "0509530093"
+      params["txtUserCellular"] = "0737296060"
       params["destination"] = @pupil.invited_phone
-      params["txtSMSmessage"] = "שלום #{@pupil.full_name} הנני להזמינך לפגישת מחזור ל בית הספר נר עציון לפרטים יש ללחוץ כאן: http://bit.ly/1Q6y0X0"
+      params["txtSMSmessage"] = "שלום #{@pupil.full_name} הנני להזמינך לפגישת מחזור ל בית הספר נר עציון לפרטים יש ללחוץ כאן: http://bit.ly/nerezion נבקשך להרשם וכן להזמין חברים נוספים תודה."
       params["dteToDeliver"] = ""
       params["txtAddInf"] = "LocalMessageID"
 

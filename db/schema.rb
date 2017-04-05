@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402114352) do
+ActiveRecord::Schema.define(version: 20170403092624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.string   "attachinariable_type"
+    t.integer  "attachinariable_id"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
+  end
 
   create_table "book_comunities", force: :cascade do |t|
     t.integer  "pupil_id"
@@ -22,6 +37,16 @@ ActiveRecord::Schema.define(version: 20170402114352) do
     t.string   "photo_form_today"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.integer  "pupil_id"
+    t.string   "last_name"
+    t.text     "about"
+    t.boolean  "expose_phone", default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["pupil_id"], name: "index_books_on_pupil_id", using: :btree
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -41,6 +66,18 @@ ActiveRecord::Schema.define(version: 20170402114352) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.text     "email_registration"
+  end
+
+  create_table "memorials", force: :cascade do |t|
+    t.integer  "book_id"
+    t.integer  "pupil_id_sender"
+    t.integer  "pupil_id_reciver"
+    t.text     "content"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["book_id"], name: "index_memorials_on_book_id", using: :btree
+    t.index ["pupil_id_reciver"], name: "index_memorials_on_pupil_id_reciver", using: :btree
+    t.index ["pupil_id_sender"], name: "index_memorials_on_pupil_id_sender", using: :btree
   end
 
   create_table "not_in_lists", force: :cascade do |t|
@@ -70,4 +107,6 @@ ActiveRecord::Schema.define(version: 20170402114352) do
     t.datetime "updated_at",                    null: false
   end
 
+  add_foreign_key "books", "pupils"
+  add_foreign_key "memorials", "books"
 end

@@ -12,7 +12,10 @@ class StaticPagesController < ApplicationController
   end
 
   def login
-    #code
+    @pupil = Pupil.find_by(phone: params[:invited_phone])
+    if @pupil.present?
+      cookies.signed[:pupil] = { value: @pupil.id, expires: 1.year.from_now }
+    end
   end
 
   def whos_in
@@ -25,6 +28,13 @@ class StaticPagesController < ApplicationController
     @no_details1 = Pupil.where(email: nil, phone: nil, class_name: '1').all
     @no_details2 = Pupil.where(email: nil, phone: nil, class_name: '2')
     @no_details3 = Pupil.where(email: nil, phone: nil, class_name: '3')
+
+  end
+
+  def book_memorials
+    @book = current_user.present? ? current_user.book : Book.new
+    @pupils = Pupil.all
+    current_user.association(:memorials_sender).add_to_target(Memorial.new)
 
   end
 end

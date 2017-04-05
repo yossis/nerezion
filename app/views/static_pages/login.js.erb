@@ -1,0 +1,5 @@
+<% if @pupil.present?%>
+  location.href = "<%= book_memorials_url %>";
+<% else %>
+  $('.modal-message').html('מספר זה אינו קיים במערכת');
+<% end %>

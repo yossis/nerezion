@@ -5,4 +5,9 @@ class ApplicationController < ActionController::Base
   def load_pupils
     @pupils = Pupil.where(is_registered: false)
   end
+
+  def current_user
+    @current_user ||= Pupil.find(cookies.signed[:pupil]) if cookies.signed[:pupil]
+  end
+  helper_method :current_user
 end

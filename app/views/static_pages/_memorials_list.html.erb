@@ -1,0 +1,5 @@
+<% current_user.memorials_sender.each do |m|%>
+  <div class="show-form">
+    <%= render 'memorials/form', memorial: m%>
+  </div>
+<% end %>

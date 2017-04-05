@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @memorial.book %>
+</p>
+
+<p>
+  <strong>Pupil id sender:</strong>
+  <%= @memorial.pupil_id_sender %>
+</p>
+
+<p>
+  <strong>Pupil id reciver:</strong>
+  <%= @memorial.pupil_id_reciver %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @memorial.content %>
+</p>
+
+<%= link_to 'Edit', edit_memorial_path(@memorial) %> |
+<%= link_to 'Back', memorials_path %>

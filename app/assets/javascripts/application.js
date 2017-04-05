@@ -13,7 +13,8 @@
 //= require jquery
 
 //= require jquery_ujs
-
+//= require cloudinary
+//= require attachinary
 //= require select2
 //= require select2_locale_he
 //= require_tree .

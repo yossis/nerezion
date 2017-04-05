@@ -25,6 +25,12 @@ class Pupil < ApplicationRecord
   validates :is_coming, acceptance: {message: 'נא לסמן הגעה'}
   default_scope { order(last_name: :asc) }
 
+  has_one :book
+  has_many :memorials_sender ,class_name: 'Memorial', foreign_key: :pupil_id_sender
+  has_many :memorials_recived ,class_name: 'Memorial', foreign_key: :pupil_id_reciver
+
+
+
   def invited?
     is_invited || phone.present?
   end
@@ -40,5 +46,9 @@ class Pupil < ApplicationRecord
       errors.add(:phone, 'מספר טלפון לא חוקי')
       false
     end
+  end
+
+  def book
+    super || build_book
   end
 end

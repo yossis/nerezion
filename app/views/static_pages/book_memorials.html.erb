@@ -1,0 +1,42 @@
+<% title "ספר מחזור" %>
+<%= cloudinary_js_config %>
+<% if current_user %>
+<section>
+  <div class="container">
+    <div class="alert alert-success">
+      עמוד זה חשוף לפרטיותך בלבד, אם אינך <strong><span><%= current_user.full_name %></span></strong> בבקשה <a class="modal-popup" data-target="#modalBook">ללחוץ כאן</a>
+    </div>
+    <h2 class="center">ספר מחזור</h2>
+    <p>אפשר לעשות את זה, זה לא דורש מאמץ גדול מידי. אנחנו בסה״כ צריכים תמונה שלך מהעבר, תמונה מההווה וקצת לכתוב על עצמך</p>
+    <p>יודגש כי המידע שתכתבו כאן נגיש לעינך בלבד והוא יפורסם אך ורק הספר יצא לאור</p>
+  </div>
+</section>
+<section class="bg-gray">
+  <div class="container">
+    <h2 class="center">מתחילים</h2>
+    <%= render 'books/form'%>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h2 class="center">כתוב על חברים</h2>
+    <p>באפשרותך לבחור חבר/ה או מורה ולכתוב. זה יכול להיות זכרון כל שהוא או אנקדוטה כל שהיא</p>
+    <div class="memrails-list-container">
+      <%= render 'static_pages/memorials_list' %>
+    </div>
+  </div>
+</section>
+
+<% else %>
+
+<section>
+  <div class="container">
+    <div class="alert alert-danger">
+      בכדי להכנס לעמוד זה עליך <strong><a>להרשם</a></strong> תחילה
+    </div>
+  </div>
+
+</section>
+
+<% end %>
+<%= render 'modals/modal_book'%>
