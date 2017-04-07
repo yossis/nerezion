@@ -4,6 +4,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
+    puts "The request ip is: #{request.remote_ip}"
     @contacts = Contact.all
   end
 
