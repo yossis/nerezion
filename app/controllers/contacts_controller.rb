@@ -4,7 +4,9 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
+    Rails.logger.info "I WANT this to go to console/stdout when rspec is running #{request.remote_ip}"
     puts "The request ip is: #{request.remote_ip}"
+
     @contacts = Contact.all
   end
 
