@@ -3,8 +3,9 @@ class SmsJob < ApplicationJob
 
   def perform(id)
     @pupil = Pupil.find(id)
-    #send_sms
-    puts "The request ip is: #{request.remote_ip}"
+    ip_address = Socket.ip_address_list.find { |ai| ai.ipv4? && !ai.ipv4_loopback? }.ip_address
+    Rails.logger.info "I WANT this to go to console/stdout when rspec is running #{ip_address}"
+
   end
 
   def send_sms
