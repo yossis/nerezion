@@ -34,7 +34,7 @@ class StaticPagesController < ApplicationController
   def book_memorials
     @book = current_user.present? ? current_user.book : Book.new
     @pupils = Pupil.all
-    current_user.association(:memorials_sender).add_to_target(Memorial.new)
+    current_user.association(:memorials_sender).add_to_target(Memorial.new) if current_user.present?
 
   end
 end

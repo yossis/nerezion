@@ -32,7 +32,7 @@
 <section>
   <div class="container">
     <div class="alert alert-danger">
-      בכדי להכנס לעמוד זה עליך <strong><a>להרשם</a></strong> תחילה
+      בכדי להכנס לעמוד זה עליך <strong><a data-toggle="modal" data-target="#modalRegistration">להרשם</a></strong> תחילה, אם נרשמת כבר יש ללחוץ <a class="modal-popup" data-target="#modalBook">כאן</a>
     </div>
   </div>
 
@@ -40,3 +40,4 @@
 
 <% end %>
 <%= render 'modals/modal_book'%>
+<%= render 'modals/modal_invite' %>
