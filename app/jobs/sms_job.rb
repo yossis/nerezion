@@ -20,7 +20,8 @@ class SmsJob < ApplicationJob
       params["t"] = t
       params["txtUserCellular"] = "0737296060"
       params["destination"] = @pupil.invited_phone
-      params["txtSMSmessage"] = "שלום #{@pupil.full_name} הנני להזמינך לפגישת מחזור ל בית הספר נר עציון לפרטים יש ללחוץ כאן: http://bit.ly/nerezion נבקשך להרשם וכן להזמין חברים נוספים תודה."
+      #params["txtSMSmessage"] = "שלום #{@pupil.full_name} הנני להזמינך לפגישת מחזור ל בית הספר נר עציון לפרטים יש ללחוץ כאן: http://bit.ly/nerezion נבקשך להרשם וכן להזמין חברים נוספים תודה."
+      params["txtSMSmessage"] = "שלום #{@pupil.full_name} בית הספר נר עציון מזמין אותך לפגישת מחזור ל׳, לפרטים נא כאן: http://bit.ly/nerezion נבקשך להרשם וכן להזמין חברים נוספים תודה."
       params["dteToDeliver"] = ""
       params["txtAddInf"] = "LocalMessageID"
 

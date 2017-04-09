@@ -271,7 +271,22 @@ footer {
 }
 
 @media only screen and (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
   .modal {
-    margin-top: 100px;
+    margin-top: 80px;
+  }
+  h1 {
+    font-size: 35px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  .main-fold {
+    height: 450px;
   }
 }
