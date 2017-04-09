@@ -10,7 +10,7 @@ class SmsJob < ApplicationJob
       t = Time.now.strftime("%Y-%m-%d %H:%M:%S")
 
       #client = Savon.client(wsdl: "http://api.itnewsletter.co.il/webServices/WebServiceSMS.asmx?wsdl")
-      client = Savon.client(wsdl: "https://sapi.itnewsletter.co.il/webServices/WebServiceSMS.asmx?wsdl")
+      client = Savon.client(wsdl: "https://sapi.itnewsletter.co.il/webServices/WebServiceSMS.asmx?wsdl",ssl_verify_mode: :none)
 
       params = {} #Array.new
       params["un"] = ENV["SMS_USER_NAME"]
