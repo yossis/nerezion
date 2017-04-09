@@ -3,15 +3,15 @@ class SmsJob < ApplicationJob
 
   def perform(id)
     @pupil = Pupil.find(id)
-    ip_address = Socket.ip_address_list.find { |ai| ai.ipv4? && !ai.ipv4_loopback? }.ip_address
-    Rails.logger.info "I WANT this to go to console/stdout when rspec is running #{ip_address}"
-
+    send_sms
   end
 
   def send_sms
       t = Time.now.strftime("%Y-%m-%d %H:%M:%S")
 
-      client = Savon.client(wsdl: "http://api.itnewsletter.co.il/webServices/WebServiceSMS.asmx?wsdl")
+      #client = Savon.client(wsdl: "http://api.itnewsletter.co.il/webServices/WebServiceSMS.asmx?wsdl")
+      client = Savon.client(wsdl: "https://sapi.itnewsletter.co.il/webServices/WebServiceSMS.asmx?wsdl")
+
       params = {} #Array.new
       params["un"] = ENV["SMS_USER_NAME"]
       params["pw"] = ENV['SMS_PASSWORD']
