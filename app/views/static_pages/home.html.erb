@@ -1,3 +1,6 @@
+<% content_for :styles do %>
+ <link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
+<% end %>
 
 
 <section class="main-fold">
@@ -6,7 +9,19 @@
       <div class="display-table-cell vertical-align-middle">
         <h1>מפגש מחזור ל׳</h1>
         <h2>בית הספר נר-עציון</h2>
-        <h3>יום שלישי ה26/7 בשעה 18:00 ברחבת ביה״ס</h3>
+        <h3>יום רביעי ה26/7 בשעה 18:00 ברחבת ביה״ס (<span class="addtocalendar atc-style-menu-wb">
+          <a class="atcb-link">הוסף ליומן</a>
+          <var class="atc_event">
+              <var class="atc_date_start">2017-07-26 18:00:00</var>
+              <var class="atc_date_end">2017-07-26 21:00:00</var>
+              <var class="atc_timezone">Asia/Jerusalem</var>
+              <var class="atc_title">מפגש מחזור ל נר עציון</var>
+              <var class="atc_description">פגישה ברחבת בית הספר</var>
+              <var class="atc_location">נצח ישראל 5, פתח תקווה</var>
+              <var class="atc_organizer">Yossi Shalem</var>
+              <var class="atc_organizer_email">yossishalem@gmail.com</var>
+          </var>
+        </span>)</h3>
         <br/>
         <a data-toggle="modal" data-target="#modalRegistration" class="btn btn-lg btn-primary">להרשמה!</a>
       </div>
@@ -38,9 +53,9 @@
     <h1>היכן אפשר לעזור?</h1>
     <p>
       <%= nl2br @home.what_help%>
-
+    </p>
+    <p>
       <%= link_to 'להוספת עצמך לספר מחזור יש ללחוץ כאן', book_memorials_url %>
-
 
     </p>
   </div>
@@ -55,6 +70,7 @@
       <strong>ליצירת קשר <%= link_to 'יש ללחוץ כאן', new_contact_url %></strong>
     </p>
     <p>
+      <br/>
       <%= link_to 'להזמנת חברים ולראות מי מגיע יש ללחוץ כאן', whos_in_url %>
     </p>
     <div class="center">
@@ -71,4 +87,14 @@
       $('#siteHeaderNavbar').addClass('transparent');
     }
   });
+</script>
+
+
+<script type="text/javascript">(function () {
+       if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
+       if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
+           var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+           s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
+           s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
+           var h = d[g]('body')[0];h.appendChild(s); }})();
 </script>
