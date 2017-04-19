@@ -3,7 +3,7 @@ require "application_responder"
 class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
-  
+
 
   protect_from_forgery with: :exception
   before_action :load_pupils
@@ -26,4 +26,9 @@ class ApplicationController < ActionController::Base
       username == "foo" && password == "bar"
     end
   end
+
+  def mobile_device?
+    request.user_agent =~ /Mobile|webOS/
+  end
+  helper_method :mobile_device?
 end
