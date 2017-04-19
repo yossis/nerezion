@@ -79,6 +79,7 @@
   </div>
 </section>
 
+<% if @transparent.present? %>
 <script type="text/javascript">
   $(window).scroll(function() {
     if ($(document).scrollTop() > 100) {
@@ -88,6 +89,7 @@
     }
   });
 </script>
+<% end %>
 
 
 <script type="text/javascript">(function () {

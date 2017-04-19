@@ -2,7 +2,11 @@ class StaticPagesController < ApplicationController
   def home
     @home = Home.find(1)
     @home_bold = 'class=bold'
-    @transparent = 'sticky transparent' unless mobile_device?
+    if mobile_device?
+      @mb0 = "mb0"
+    else
+      @transparent = 'sticky transparent'
+    end
   end
 
   def registration
