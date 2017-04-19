@@ -1,5 +1,6 @@
 class PupilsController < ApplicationController
   before_action :set_pupil, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate, only: [:index]
 
   # GET /pupils
   # GET /pupils.json

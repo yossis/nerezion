@@ -1,6 +1,7 @@
 class MemorialsController < ApplicationController
   before_action :set_memorial, only: [:show, :edit, :update, :destroy]
   before_action :set_memorial_sender, only: [:update]
+    before_action :authenticate, only: [:index]
 
   # GET /memorials
   # GET /memorials.json

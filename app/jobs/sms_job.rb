@@ -3,7 +3,7 @@ class SmsJob < ApplicationJob
 
   def perform(id)
     @pupil = Pupil.find(id)
-    send_sms
+    #send_sms
   end
 
   def send_sms

@@ -1,5 +1,6 @@
 class NotInListsController < ApplicationController
   before_action :set_not_in_list, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate, only: [:index]
 
   # GET /not_in_lists
   # GET /not_in_lists.json

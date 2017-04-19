@@ -1,12 +1,10 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate, only: [:index, :destroy, :update]
 
   # GET /contacts
   # GET /contacts.json
   def index
-    Rails.logger.info "I WANT this to go to console/stdout when rspec is running #{request.remote_ip}"
-    puts "The request ip is: #{request.remote_ip}"
-
     @contacts = Contact.all
   end
 

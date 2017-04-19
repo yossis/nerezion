@@ -20,7 +20,7 @@ Pupil.find_or_create_by(first_name: 'ליאור', last_name: 'אבידן', class
 Pupil.find_or_create_by(first_name: 'עמי', last_name: 'לובטון', class_name: '1')
 Pupil.find_or_create_by(first_name: 'זאב', last_name: 'קסלר', class_name: '1')
 Pupil.find_or_create_by(first_name: 'פיני', last_name: 'פרידמן', class_name: '1')
-Pupil.find_or_create_by(first_name: 'שירי', last_name: 'אורזל', class_name: '1')
+
 Pupil.find_or_create_by(first_name: 'מור', last_name: 'מזור', class_name: '1')
 Pupil.find_or_create_by(first_name: 'ענת', last_name: 'מזרחי', class_name: '1')
 Pupil.find_or_create_by(first_name: 'רבקה', last_name: 'קרפלס', class_name: '1')
@@ -32,10 +32,10 @@ Pupil.find_or_create_by(first_name: 'שחר', last_name: 'דעוס', class_name:
 Pupil.find_or_create_by(first_name: 'יעקב', last_name: 'כהן', class_name: '1')
 Pupil.find_or_create_by(first_name: 'ניר', last_name: 'יעקב', class_name: '1')
 Pupil.find_or_create_by(first_name: 'ערן', last_name: 'לשם', class_name: '1')
-# Pupil.find_or_create_by(first_name: '', last_name: '', class_name: '1')
-# Pupil.find_or_create_by(first_name: '', last_name: '', class_name: '1')
-# Pupil.find_or_create_by(first_name: '', last_name: '', class_name: '1')
-# Pupil.find_or_create_by(first_name: '', last_name: '', class_name: '1')
+Pupil.find_or_create_by(first_name: 'ציפי', last_name: 'ברנשטין', class_name: '1')
+Pupil.find_or_create_by(first_name: 'יהודית', last_name: 'קראווני', class_name: '1')
+Pupil.find_or_create_by(first_name: 'שרית', last_name: 'גברא', class_name: '1')
+#Pupil.find_or_create_by(first_name: '', last_name: '', class_name: '1')
 
 #Vav 2
 
@@ -72,6 +72,7 @@ Pupil.find_or_create_by(first_name: 'אורית', last_name: 'שמור', class_n
 
 Pupil.find_or_create_by(first_name: 'רחל', last_name: 'אברהם', class_name: '3')
 Pupil.find_or_create_by(first_name: 'נתי', last_name: 'אהרוני', class_name: '3')
+Pupil.find_or_create_by(first_name: 'שירי', last_name: 'אורזל', class_name: '3')
 Pupil.find_or_create_by(first_name: 'שמעון', last_name: 'אנקרי', class_name: '3')
 Pupil.find_or_create_by(first_name: 'יוסי', last_name: 'ביטון', class_name: '3')
 Pupil.find_or_create_by(first_name: 'עטרה', last_name: 'בן טובים', class_name: '3')
