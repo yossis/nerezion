@@ -1,7 +1,7 @@
 <div id="notInList" style="display: none">
 
   <%= form_for(Pupil.new, remote: true) do |f| %>
-  <div class="modal-message"></div>
+
 
   <div class="form-group">
     <%= f.text_field :first_name ,class: 'form-control input-lg reset-on-press', placeholder: 'שם פרטי', required: true%>
@@ -37,6 +37,8 @@
     <%= f.check_box :is_teacher %>
     <%= f.label :is_teacher, 'סמן כאן אם הנך מורה' %>
   </div>
+
+  <div class="modal-message"></div>
 
   <div class="actions center">
     <%= f.submit 'רשום אותי!', class: 'btn btn-primary btn-lg', data: { disable_with: 'רושם..'} %>
