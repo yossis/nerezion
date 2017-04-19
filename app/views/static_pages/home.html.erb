@@ -7,6 +7,8 @@
         <h1>מפגש מחזור ל׳</h1>
         <h2>בית הספר נר-עציון</h2>
         <h3>יום שלישי ה26/7 בשעה 18:00 ברחבת ביה״ס</h3>
+        <br/>
+        <a data-toggle="modal" data-target="#modalRegistration" class="btn btn-lg btn-primary">להרשמה!</a>
       </div>
     </div>
 
@@ -36,6 +38,10 @@
     <h1>היכן אפשר לעזור?</h1>
     <p>
       <%= nl2br @home.what_help%>
+
+      <%= link_to 'להוספת עצמך לספר מחזור יש ללחוץ כאן', book_memorials_url %>
+
+
     </p>
   </div>
 </section>
@@ -47,6 +53,9 @@
     </p>
     <p>
       <strong>ליצירת קשר <%= link_to 'יש ללחוץ כאן', new_contact_url %></strong>
+    </p>
+    <p>
+      <%= link_to 'להזמנת חברים ולראות מי מגיע יש ללחוץ כאן', whos_in_url %>
     </p>
     <div class="center">
       <a data-toggle="modal" data-target="#modalRegistration" class="btn btn-lg btn-primary">להרשמה!</a>

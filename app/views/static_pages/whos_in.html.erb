@@ -6,10 +6,24 @@
       <div class="alert alert-success">
         <div>תודה על הרשמתך!</div>
 
-        <div>נתראה ביום ד׳ ה27/7 בשעה 18:00 בביה״ס</div>
+        <div>נתראה ביום ג׳ ה26/7 בשעה 18:00 ברחבת ביה״ס</div>
+        <h3>רגע!</h3>
+        <div>צריך את עזרתך באיתור החברים המופיעים מטה</div>
+        <div>כמו כן, ניתן לראות מי מגיע בתחתית עמוד זה</div>
       </div>
     <% end %>
 
+    <h2>עזרו לאתר את האנשים הבאים</h2>
+    <p>אם יש ברשותך מספר טלפון של אחד או יותר מהחברים המופיעים כאן , נא ללחוץ על השם ולהקיש את מספר הטלפון - הזמנה תשלח באמצעות הודעת SMS</p>
+    <div class="thankyou-message"></div>
+    <div id="inviteListContainer">
+      <%= render 'static_pages/invite_list' %>
+    </div>
+
+  </div>
+</section>
+<section>
+  <div class="container">
     <h2>מי מגיע?</h2>
 
     <div class="col-md-3">
@@ -48,15 +62,6 @@
       </ul>
     </div>
 
-  </div>
-</section>
-<section>
-  <div class="container">
-    <h2>עזרו לאתר את האנשים הבאים</h2>
-    <div class="thankyou-message"></div>
-    <div id="inviteListContainer">
-      <%= render 'static_pages/invite_list' %>
-    </div>
 
 
   </div>
