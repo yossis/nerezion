@@ -35,7 +35,7 @@ class PupilsController < ApplicationController
 
     respond_to do |format|
       if @pupil.is_valid_phone?(pupil_params[:phone]) && @pupil.save
-        PupilMailer.welcome(@pupil.id).deliver_later
+        PupilMailer.welcome(@pupil.id).deliver_later if @pupil.email.present?
         SystemMailer.welcome(@pupil).deliver_later
         flash[:success] = true
         cookies.signed[:pupil] = { value: @pupil.id, expires: 1.year.from_now }

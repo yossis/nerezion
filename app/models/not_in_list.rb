@@ -15,7 +15,7 @@
 class NotInList < ApplicationRecord
   validates :full_name, presence: true
   validates :phone_number, uniqueness: {message: 'מספר טלפון זה קיים במערכת'}, presence: {message: 'יש להכניס מספר טלפון'}
-  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i  , message: 'כתובת מייל שגויה'}
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i  , message: 'כתובת מייל שגויה'}, :allow_blank => true
 
 
   def is_valid_phone?(str_number)
