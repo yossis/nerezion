@@ -14,6 +14,8 @@
       <th>Phone</th>
       <th>Is coming</th>
       <th>Is registered</th>
+      <th>Invited by</th>
+      <th>Invited phone</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -29,6 +31,8 @@
         <td><%= pupil.phone %></td>
         <td><%= pupil.is_coming %></td>
         <td><%= pupil.is_registered %></td>
+        <td><%= pupil.invited_by %></td>
+        <td><%= pupil.invited_phone %></td>
         <td><%= link_to 'Show', pupil %></td>
         <td><%= link_to 'Edit', edit_pupil_path(pupil) %></td>
         <td><%= link_to 'Destroy', pupil, method: :delete, data: { confirm: 'Are you sure?' } %></td>
